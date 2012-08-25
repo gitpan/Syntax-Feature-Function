@@ -4,13 +4,14 @@ use warnings;
 # ABSTRACT: Provides a function keyword
 
 package Syntax::Feature::Function;
-BEGIN {
-  $Syntax::Feature::Function::VERSION = '0.001';
+{
+  $Syntax::Feature::Function::VERSION = '0.002';
 }
 
 use Carp                    qw( croak );
 use Function::Parameters    ();
 use B::Hooks::EndOfScope;
+use Import::Into;
 
 use namespace::clean;
 
@@ -68,7 +69,7 @@ sub install {
         for @names;
 
     # install handlers
-    Function::Parameters::import_into $target, $_
+    Function::Parameters->import::into($target, $_)
         for @names;
 
     on_scope_end {
@@ -80,7 +81,7 @@ sub install {
 
 1;
 
-
+__END__
 
 =pod
 
@@ -90,7 +91,7 @@ Syntax::Feature::Function - Provides a function keyword
 
 =head1 VERSION
 
-version 0.001
+version 0.002
 
 =head1 SYNOPSIS
 
@@ -156,13 +157,9 @@ Robert 'phaylon' Sedlacek <rs@474.at>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2010 by Robert 'phaylon' Sedlacek.
+This software is copyright (c) 2012 by Robert 'phaylon' Sedlacek.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-
-
-__END__
-

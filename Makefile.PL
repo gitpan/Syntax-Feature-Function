@@ -4,32 +4,34 @@ use warnings;
 
 
 
-use ExtUtils::MakeMaker 6.31;
+use ExtUtils::MakeMaker 6.30;
 
 
 
 my %WriteMakefileArgs = (
-  'ABSTRACT' => 'Provides a function keyword',
-  'AUTHOR' => 'Robert \'phaylon\' Sedlacek <rs@474.at>',
-  'BUILD_REQUIRES' => {},
-  'CONFIGURE_REQUIRES' => {
-    'ExtUtils::MakeMaker' => '6.31'
+  "ABSTRACT" => "Provides a function keyword",
+  "AUTHOR" => "Robert 'phaylon' Sedlacek <rs\@474.at>",
+  "BUILD_REQUIRES" => {
+    "Test::More" => "0.94"
   },
-  'DISTNAME' => 'Syntax-Feature-Function',
-  'EXE_FILES' => [],
-  'LICENSE' => 'perl',
-  'NAME' => 'Syntax::Feature::Function',
-  'PREREQ_PM' => {
-    'B::Hooks::EndOfScope' => '0.08',
-    'Carp' => '0',
-    'Function::Parameters' => '0.04',
-    'Test::More' => '0.94',
-    'namespace::clean' => '0.14',
-    'syntax' => '0'
+  "CONFIGURE_REQUIRES" => {
+    "ExtUtils::MakeMaker" => "6.30"
   },
-  'VERSION' => '0.001',
-  'test' => {
-    'TESTS' => 't/*.t'
+  "DISTNAME" => "Syntax-Feature-Function",
+  "EXE_FILES" => [],
+  "LICENSE" => "perl",
+  "NAME" => "Syntax::Feature::Function",
+  "PREREQ_PM" => {
+    "B::Hooks::EndOfScope" => "0.08",
+    "Carp" => 0,
+    "Function::Parameters" => "0.04",
+    "Import::Into" => "1.001000",
+    "namespace::clean" => "0.14",
+    "syntax" => "0.001"
+  },
+  "VERSION" => "0.002",
+  "test" => {
+    "TESTS" => "t/*.t"
   }
 );
 
